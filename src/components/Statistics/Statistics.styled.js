@@ -30,6 +30,7 @@ export const StatItem = styled.li`
   text-align: center;
   width: 100px;
   padding: 10px;
+
   background-color: ${props => {
     switch (props.label) {
       case '.docx':
@@ -40,6 +41,8 @@ export const StatItem = styled.li`
         return 'rgb(229,76,104)';
       case '.psd':
         return 'rgb(32,184,197)';
+      default:
+        return;
     }
   }};
 `;
