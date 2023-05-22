@@ -1,30 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  ProfileCard,
+  Descritpion,
+  Avatar,
+  Username,
+  Tag,
+  Location,
+  Stats,
+  StatsLi,
+  Label,
+  Quantity,
+} from './Profile.styled';
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt="User avatar" class="avatar" />
-        <p class="name">{username}</p>
-        <p class="tag">@{tag}</p>
-        <p class="location">{location}</p>
-      </div>
+    <ProfileCard>
+      <Descritpion>
+        <Avatar src={avatar} alt="User avatar" />
+        <Username>{username}</Username>
+        <Tag>@{tag}</Tag>
+        <Location>{location}</Location>
+      </Descritpion>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{stats.followers}</span>
-        </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{stats.views}</span>
-        </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+      <Stats>
+        <StatsLi>
+          <Label>Followers</Label>
+          <Quantity>{stats.followers}</Quantity>
+        </StatsLi>
+        <StatsLi>
+          <Label>Views</Label>
+          <Quantity>{stats.views}</Quantity>
+        </StatsLi>
+        <StatsLi>
+          <Label>Likes</Label>
+          <Quantity>{stats.likes}</Quantity>
+        </StatsLi>
+      </Stats>
+    </ProfileCard>
   );
 };
 
